@@ -1,9 +1,12 @@
+#Input Student data
 name=input("Enter Student name:")
 marks1=int(input("Enter marks for Subject 1:"))
 marks2=int(input("Enter marks for Subject 2:"))
 marks3=int(input("Enter marks for Subject 3:"))
+#For Calculatios
 total=marks1+marks2+marks3
 average=total/3
+#Grade assign Using conditional statement
 if average >=90:
   grade='Excellent'
 
@@ -15,7 +18,7 @@ elif average >=40:
   grade='Bellow average'
 else:
   grade='poor'
-
+# for multiple student
 
 n=int(input("Enter Number of Student:"))
 for i in range(n):
