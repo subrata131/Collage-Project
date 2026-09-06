@@ -11,7 +11,7 @@ while True:
 
     n = int(input("Enter Your Choice: "))
 
-    # Add Contact
+
     if n == 1:
         print("\n=== Add Contact ===")
 
@@ -24,7 +24,7 @@ while True:
 
         print("=== Contact Added Successfully ===")
 
-    # View Contacts
+
     elif n == 2:
         print("\n=== Contact List ===")
 
@@ -36,7 +36,7 @@ while True:
                 print(f"Contact Number: {i['number']}")
                 print("----------------------")
 
-    # Search Contact
+
     elif n == 3:
         print("\n=== Search Contact ===")
 
@@ -50,7 +50,7 @@ while True:
         else:
             print("Contact Not Found")
 
-    # Update Contact
+
     elif n == 4:
         print("\n=== Update Contact ===")
 
@@ -73,7 +73,6 @@ while True:
         else:
             print("Contact Not Found")
 
-    # Remove Contact
     elif n == 5:
         print("\n=== Remove Contact ===")
 
@@ -88,7 +87,7 @@ while True:
         else:
             print("Contact Not Found")
 
-    # Exit
+
     elif n == 6:
         print("Thank You!")
         break
