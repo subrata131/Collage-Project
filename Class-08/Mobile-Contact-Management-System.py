@@ -1,81 +1,97 @@
-contact={
-
-}
+contact = {}
 
 while True:
-  print("===Mobile Contact and Call Management System===")
-  print("1.Add \n2.View\n3.Search\n4.Update\n5.Remove\n6.Exit")
-  n=int(input("Enter Your Choice:"))
+    print("\n=== Mobile Contact and Call Management System ===")
+    print("1. Add")
+    print("2. View")
+    print("3. Search")
+    print("4. Update")
+    print("5. Remove")
+    print("6. Exit")
 
-  if n==1:
-    print("===Add Student===")
+    n = int(input("Enter Your Choice: "))
 
-    m=input("Enter Contact name:").islower()
-    nu=int(input("Enter Number:"))
-    contact[m]={
-        "number":nu
-    }
+    # Add Contact
+    if n == 1:
+        print("\n=== Add Contact ===")
 
-    print("===Contact Added Sucess===")
+        name = input("Enter Contact Name: ").lower()
+        number = input("Enter Number: ")
 
-  elif n==2:
-    n=input("Enter Contact Name:").islower()
+        contact[name] = {
+            "number": number
+        }
 
-    if n in contact:
-      print("Contact Found")
+        print("=== Contact Added Successfully ===")
 
-      print("===Contact Details===")
-      print(f"Contact Name:{contact[name]}")
-      print(f"Contact Number:{contact[name]["number"]}")
+    # View Contacts
+    elif n == 2:
+        print("\n=== Contact List ===")
+
+        if len(contact) == 0:
+            print("No Contacts Found")
+        else:
+            for name, i in contact.items():
+                print(f"Contact Name: {name}")
+                print(f"Contact Number: {i['number']}")
+                print("----------------------")
+
+    # Search Contact
+    elif n == 3:
+        print("\n=== Search Contact ===")
+
+        name = input("Enter Contact Name: ").lower()
+
+        if name in contact:
+            print("Contact Found")
+            print("=== Contact Details ===")
+            print(f"Contact Name: {name}")
+            print(f"Contact Number: {contact[name]['number']}")
+        else:
+            print("Contact Not Found")
+
+    # Update Contact
+    elif n == 4:
+        print("\n=== Update Contact ===")
+
+        name = input("Enter Contact Name: ").lower()
+
+        if name in contact:
+            print("Contact Found")
+
+            editname = input("Enter New Contact Name: ").lower()
+            editnumber = input("Enter New Number: ")
+
+            contact[editname] = {
+                "number": editnumber
+            }
+
+            if editname != name:
+                del contact[name]
+
+            print("Contact Updated Successfully")
+        else:
+            print("Contact Not Found")
+
+    # Remove Contact
+    elif n == 5:
+        print("\n=== Remove Contact ===")
+
+        name = input("Enter Contact Name: ").lower()
+
+        if name in contact:
+            print("Contact Found")
+
+            del contact[name]
+
+            print("Contact Removed Successfully")
+        else:
+            print("Contact Not Found")
+
+    # Exit
+    elif n == 6:
+        print("Thank You!")
+        break
+
     else:
-      print("Contact Not Found")
-
-
-  elif n==3:
-      if n in contact:
-        print("Contact Found")
-
-        print("===Contact Details===")
-        print(f"Contact Name:{contact[name]}")
-        print(f"Contact Number:{contact[name]["number"]}")
-      else:
-        print("Contact Not Found")
-
-  elif n==4:
-      if n in contact:
-        print("Contact Found")
-
-        print("===Update Details===")
-        editname=input("Enter Update Name:").islower()
-        edit=int(input("Enter Update Number:"))
-        contact[name]=editname
-        contact[name]["number"]=edit
-        print("UPdate Sucess")
-      else:
-       print("Contact Not Found")
-
-  elif n==5:
-
-      if n in contact:
-         print("Contact Found")
-
-
-
-      else:
-       print("Contact Not Found")
-
-
-  elif n==6:
-    break
-
-  else:
-    print("Invaild Input")
-
-
-
-
-
-
-
-
-
+        print("Invalid Input")
